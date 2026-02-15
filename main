@@ -1,0 +1,33 @@
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.core.window import Window
+
+class TigerAIHome(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.orientation = 'vertical'
+        self.padding = 20
+        self.spacing = 10
+
+        # Header
+        self.add_widget(Label(text="Tiger AI - Baazigar Nano System", font_size='24sp', bold=True, color=(1, 0.5, 0, 1)))
+        self.add_widget(Label(text="Mission: Indian Army Security & Education", font_size='14sp'))
+
+        # Buttons for features
+        self.add_widget(Button(text="Border Surveillance (ସୀମା ସୁରକ୍ଷା)", size_hint_y=None, height=50))
+        self.add_widget(Button(text="Farmer Land Map (ଚାଷୀ ସହାୟତା)", size_hint_y=None, height=50))
+        self.add_widget(Button(text="Education for Poor (ଶିକ୍ଷା)", size_hint_y=None, height=50))
+        self.add_widget(Button(text="Share Market Analysis (ସେୟାର ମାର୍କେଟ)", size_hint_y=None, height=50))
+
+        # Footer
+        self.add_widget(Label(text="Made in Odisha with Ethics", font_size='12sp', italic=True))
+
+class TigerAIApp(App):
+    def build(self):
+        Window.clearcolor = (0.1, 0.1, 0.1, 1) # Dark Theme
+        return TigerAIHome()
+
+if __name__ == "__main__":
+    TigerAIApp().run()
